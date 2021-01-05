@@ -80,7 +80,7 @@
     font-family: 'Volkhov', serif;
     font-size: 15px;
     font-weight: 700;
-    color: $darkest;
+    color: #a0a0a0;
     &::before {
       content: "";
       display: block;
@@ -90,7 +90,7 @@
       position: absolute;
       top: 50%;
       left: 0;
-      background-color: $darkest;
+      background-color: #a0a0a0;
     }
     &::after {
       content: "";
@@ -101,7 +101,7 @@
       position: absolute;
       top: 50%;
       right: 0;
-      background-color: $darkest;
+      background-color: #a0a0a0;
     }
   }
   .c-social__list {
@@ -114,9 +114,9 @@
       height: 27px;
     }
     .icon {
-      width: 27px;
-      height: 27px;
-      fill: $darkest;
+      width: 40px;
+      height: 40px;
+      fill: #fff;
       vertical-align: middle;
       transition: $global-transition;
       &:hover {
@@ -130,6 +130,7 @@
     p {
       font-size: 13px;
       margin: 0;
+      color:#a0a0a0;
     }
   }
 }
