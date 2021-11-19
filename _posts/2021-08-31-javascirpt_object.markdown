@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "[JavaScript ES5+] 오브젝트"
-image: js-1.png
-categories: ['programing', 'JavaScript']
+img: js-1.png
+categories: [programing, JavaScript]
 ---
 * 강의 내용기록
 강의 : youtube, 드림코딩 by 엘리 (자바스크립트 7. 오브젝트 넌 뭐니?)
