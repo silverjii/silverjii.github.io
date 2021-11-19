@@ -1,0 +1,172 @@
+I"�T<ul>
+  <li>강의 내용기록
+강의 : youtube, 드림코딩 by 엘리 (자바스크립트 4. 코딩의 기본 operator, if, for loop 코드리뷰 팁)</li>
+</ul>
+
+<h1 id="operator">Operator</h1>
+<h4 id="--string-concatencation">- String concatencation</h4>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">my</span><span class="dl">'</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">cat); // my cat
+console.log(</span><span class="dl">'</span><span class="mi">1</span><span class="dl">'</span><span class="s1"> + 2); // 12
+console.log(`string literals : 1+2 = {1+2}`); // string literals : 1+2 = 3</span></code></pre></figure>
+
+<h4 id="--numeric-operators">- Numeric operators</h4>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// add, 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// substract, 0</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// divide, 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//multiply, 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">5</span><span class="o">%</span><span class="mi">2</span><span class="p">);</span> <span class="c1">//remainder, 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// exponentiation, 8(2의3승)</span></code></pre></figure>
+
+<h4 id="----operators">- ++, – operators</h4>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">preIncrement</span> <span class="o">=</span> <span class="o">++</span><span class="nx">counter</span><span class="p">;</span>
+<span class="c1">// counter = counter +1;</span>
+<span class="c1">// preIncrement = counter;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`preIncrement : </span><span class="p">${</span><span class="nx">preIncrement</span><span class="p">}</span><span class="s2">, counter : </span><span class="p">${</span><span class="nx">counter</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span> <span class="c1">// preIncrement : 3, counter : 3</span>
+
+<span class="kd">const</span> <span class="nx">postIncrement</span> <span class="o">=</span> <span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+<span class="c1">//postIncrement = sounter;</span>
+<span class="c1">// counter = counter +1;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`preIncrement : </span><span class="p">${</span><span class="nx">preIncrement</span><span class="p">}</span><span class="s2">, counter : </span><span class="p">${</span><span class="nx">counter</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span> <span class="c1">// preIncrement : 3, counter : 4</span>
+
+<span class="kd">const</span> <span class="nx">preDecrement</span> <span class="o">=</span> <span class="o">--</span><span class="nx">counter</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`preDecrement : </span><span class="p">${</span><span class="nx">preDecrement</span><span class="p">}</span><span class="s2">, counter : </span><span class="p">${</span><span class="nx">counter</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span> <span class="c1">//</span>
+<span class="nl">preDecrement</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">counter</span> <span class="p">:</span> <span class="mi">3</span>
+
+<span class="kd">const</span> <span class="nx">postDecrement</span> <span class="o">==</span> <span class="nx">counter</span><span class="o">--</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`preDecrement : </span><span class="p">${</span><span class="nx">preDecrement</span><span class="p">}</span><span class="s2">, counter : </span><span class="p">${</span><span class="nx">counter</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span> <span class="c1">//</span>
+<span class="nl">preDecrement</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">counter</span> <span class="p">:</span> <span class="mi">2</span></code></pre></figure>
+
+<h4 id="---operators">- = operators</h4>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="nx">x</span> <span class="o">+=</span> <span class="nx">y</span><span class="p">;</span> <span class="c1">// x = x + y;</span>
+    <span class="nx">x</span> <span class="o">-=</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="nx">x</span> <span class="o">*=</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="nx">x</span> <span class="o">/=</span><span class="nx">y</span><span class="p">;</span></code></pre></figure>
+
+<h4 id="--logical-operators---or--and--not">- Logical operators : || (or), &amp;&amp; (and), ! (not)</h4>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">value1</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">value2</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="c1">// || (or)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`or : </span><span class="p">${</span><span class="nx">value1</span> <span class="o">||</span> <span class="nx">value2</span> <span class="o">||</span> <span class="nx">check</span><span class="p">()}</span><span class="s2">`</span><span class="p">);</span> <span class="c1">// or : true</span>
+
+<span class="c1">// &amp;&amp; (and)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`and : &amp;{value1 &amp;&amp; value2 &amp;&amp; check()}`</span><span class="p">);</span> <span class="c1">// and : false</span>
+
+<span class="c1">// 헤비한 operator는 뒤에 배치, </span>
+<span class="c1">// or - 하나라도 true면 true</span>
+<span class="c1">// and - 모두 다 true이여야 true</span>
+
+<span class="kd">function</span> <span class="nx">check</span><span class="p">(){</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">*</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span>   
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// ! (not)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">!</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// false</span></code></pre></figure>
+
+<h4 id="--equality">- Equality</h4>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">stringFive</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">5</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">numberFive</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">strginFive</span> <span class="o">==</span> <span class="nx">numberFive</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stringFive</span> <span class="o">!=</span> <span class="nx">numberFive</span><span class="p">);</span> <span class="c1">// false</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stringFive</span> <span class="o">===</span> <span class="nx">numberFive</span><span class="p">);</span> <span class="c1">//false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stringFive</span> <span class="o">!==</span> <span class="nx">numberFive</span><span class="p">);</span> <span class="c1">//true</span>
+
+<span class="c1">// object equality by reference</span>
+<span class="kd">const</span> <span class="nx">ellie1</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">ellie</span><span class="dl">'</span><span class="p">};</span>
+<span class="kd">const</span> <span class="nx">ellie2</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">ellie</span><span class="dl">'</span><span class="p">};</span>
+<span class="kd">const</span> <span class="nx">ellie3</span> <span class="o">=</span> <span class="nx">ellie1</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ellie1</span> <span class="o">==</span> <span class="nx">ellie2</span><span class="p">);</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">elli1</span> <span class="o">===</span> <span class="nx">ellie2</span><span class="p">);</span> <span class="sr">/ fals</span><span class="err">e
+</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ellie1</span> <span class="o">===</span> <span class="nx">ellie3</span><span class="p">);</span> <span class="c1">//true</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="kc">false</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">===</span> <span class="kc">false</span><span class="p">);</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">''</span> <span class="o">==</span> <span class="kc">false</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">''</span> <span class="o">===</span> <span class="kc">false</span><span class="p">);</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">null</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">);</span> <span class="c1">// false</span></code></pre></figure>
+
+<h4 id="--if-operators">- If operators</h4>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">df</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">ellie</span><span class="dl">'</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Welcom, Ellie!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">name</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">coder</span><span class="dl">'</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">You ar amazing coder</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">unkwnon</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// unkwnon 출력됨.</span>
+<span class="p">}</span></code></pre></figure>
+
+<h4 id="---operators-1">- ? operators</h4>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">ellie</span><span class="dl">'</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">yes</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">no</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// no</span>
+ <span class="c1">// true면 yes, false면 no 출력</span>
+<span class="c1">// 간단할 때만 사용</span></code></pre></figure>
+
+<h4 id="--switch-operators">- switch operators</h4>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="kd">const</span> <span class="nx">browser</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">IE</span><span class="dl">'</span><span class="p">;</span>
+ <span class="k">switch</span> <span class="p">(</span><span class="nx">browser</span><span class="p">){</span>
+     <span class="k">case</span> <span class="dl">'</span><span class="s1">IE</span><span class="dl">'</span><span class="p">:</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">go away!</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// go away 출력</span>
+        <span class="k">break</span><span class="p">;</span>
+    
+    <span class="k">case</span> <span class="dl">'</span><span class="s1">Chrome</span><span class="dl">'</span><span class="p">:</span>
+    <span class="k">case</span> <span class="dl">'</span><span class="s1">Firefox</span><span class="dl">'</span><span class="p">:</span>   <span class="c1">// Chrome, Firefox 일 때 실행</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">love you!</span><span class="dl">'</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="nl">default</span><span class="p">:</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">same all!</span><span class="dl">'</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+ <span class="p">}</span>
+ </code></pre></figure>
+
+<h4 id="--while-loop">- while loop</h4>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+ <span class="k">while</span><span class="p">(</span><span class="nx">i</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">){</span> <span class="c1">//false로 나오기 전까지 무한대로 반복</span>
+     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`while : </span><span class="p">${</span><span class="nx">i</span><span class="p">}</span><span class="s2">); // while :3  while:2  while:1 
+     i--;
+ }
+ </span></code></pre></figure>
+
+<h4 id="--do-while-loop">- do-while loop</h4>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> 
+ <span class="c1">// do 내 블럭을 먼저 실행해 출력한 후 while 조건이 맞는지 체크</span>
+ <span class="c1">// 블럭을 먼저 실행하고 싶으면 do-while,  조건문이 맞을 때만 블럭을 실행하고 싶으면 while문 사용.</span>
+<span class="k">do</span><span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`do while: </span><span class="p">${</span><span class="nx">i</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>  <span class="c1">// do while : 0</span>
+    <span class="nx">i</span><span class="o">--</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&gt;</span><span class="mi">0</span><span class="p">);</span>
+ </code></pre></figure>
+
+<h4 id="--for-loop">- for loop</h4>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> 
+    <span class="c1">// for loop, for(begin; condition; step)</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">--</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`for: </span><span class="p">${</span><span class="nx">i</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>  <span class="c1">// for : 3   for : 2  for : 1   </span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">-</span><span class="mi">2</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`inline variable for : </span><span class="p">${</span><span class="nx">i</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>  <span class="c1">// inline variable for : 3    inline variable for : 1</span>
+    <span class="p">}</span> </code></pre></figure>
+
+:ET

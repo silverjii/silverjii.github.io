@@ -1,0 +1,185 @@
+---
+layout: post
+title: "[JavaScript ES5+] 연산"
+image: js-1.png
+categories: ['programing', 'JavaScript']
+---
+* 강의 내용기록
+강의 : youtube, 드림코딩 by 엘리 (자바스크립트 4. 코딩의 기본 operator, if, for loop 코드리뷰 팁)
+
+
+# Operator
+#### - String concatencation
+{% highlight javascript %}
+console.log('my' + 'cat); // my cat
+console.log('1' + 2); // 12
+console.log(`string literals : 1+2 = {1+2}`); // string literals : 1+2 = 3
+{% endhighlight %} 
+
+
+#### - Numeric operators
+{% highlight javascript %}
+console.log(1+1); // add, 2
+console.log(1-1); // substract, 0
+console.log(1/1); // divide, 1
+console.log(1*1); //multiply, 1
+console.log(5%2); //remainder, 1
+console.log(2**3); // exponentiation, 8(2의3승)
+{% endhighlight %}
+
+#### - ++, -- operators
+{% highlight javascript %}
+let counter = 2;
+const preIncrement = ++counter;
+// counter = counter +1;
+// preIncrement = counter;
+console.log(`preIncrement : ${preIncrement}, counter : ${counter}`); // preIncrement : 3, counter : 3
+
+const postIncrement = count++;
+//postIncrement = sounter;
+// counter = counter +1;
+console.log(`preIncrement : ${preIncrement}, counter : ${counter}`); // preIncrement : 3, counter : 4
+
+const preDecrement = --counter;
+console.log(`preDecrement : ${preDecrement}, counter : ${counter}`); //
+preDecrement : 3, counter : 3
+
+const postDecrement == counter--;
+console.log(`preDecrement : ${preDecrement}, counter : ${counter}`); //
+preDecrement : 3, counter : 2
+{% endhighlight %}
+
+#### - = operators
+{% highlight javascript %}
+    let x = 3;
+    let y = 6;
+    x += y; // x = x + y;
+    x -= y;
+    x *= y;
+    x /=y;
+{% endhighlight %}
+
+#### - Logical operators : || (or), && (and), ! (not)
+{% highlight javascript %}
+const value1 = false;
+const value2 = 4 < 2;
+
+// || (or)
+console.log(`or : ${value1 || value2 || check()}`); // or : true
+
+// && (and)
+console.log(`and : &{value1 && value2 && check()}`); // and : false
+
+// 헤비한 operator는 뒤에 배치, 
+// or - 하나라도 true면 true
+// and - 모두 다 true이여야 true
+
+function check(){
+    for(let i =0; i <10; i++){
+        console.log('*');
+    }   
+    return true;
+}
+
+// ! (not)
+console.log(!value); // false
+{% endhighlight %}
+
+#### - Equality
+{% highlight javascript %}
+const stringFive = '5';
+const numberFive = 5;
+
+console.log(strginFive == numberFive); // true
+console.log(stringFive != numberFive); // false
+
+console.log(stringFive === numberFive); //false
+console.log(stringFive !== numberFive); //true
+
+// object equality by reference
+const ellie1 = {name : 'ellie'};
+const ellie2 = {name : 'ellie'};
+const ellie3 = ellie1;
+
+console.log(ellie1 == ellie2); // false
+console.log(elli1 === ellie2); / false
+console.log(ellie1 === ellie3); //true
+
+console.log(0 == false); // true
+console.log(0 === false); // false
+console.log('' == false); // true
+console.log('' === false); // false
+console.log(null == undefined); // true
+console.log(null === undefined); // false
+{% endhighlight %}
+
+
+#### - If operators
+{% highlight javascript %}
+const name = 'df';
+if(name == 'ellie'){
+    console.log('Welcom, Ellie!');
+} else if(name === 'coder'){
+    console.log('You ar amazing coder');
+}else{
+    console.log('unkwnon') // unkwnon 출력됨.
+}
+{% endhighlight %}
+
+#### - ? operators
+ {% highlight javascript %}
+ console.log(name === 'ellie' ? 'yes' : 'no'); // no
+ // true면 yes, false면 no 출력
+// 간단할 때만 사용
+{% endhighlight %}
+
+#### - switch operators
+{% highlight javascript %}
+ const browser = 'IE';
+ switch (browser){
+     case 'IE':
+        console.log('go away!'); // go away 출력
+        break;
+    
+    case 'Chrome':
+    case 'Firefox':   // Chrome, Firefox 일 때 실행
+        console.log('love you!');
+        break;
+    default:
+        console.log('same all!');
+        break;
+ }
+ {% endhighlight %}
+
+
+#### - while loop
+ {% highlight javascript %}
+ let i = 3;
+ while(i>0){ //false로 나오기 전까지 무한대로 반복
+     console.log(`while : ${i}); // while :3  while:2  while:1 
+     i--;
+ }
+ {% endhighlight %}
+
+#### - do-while loop
+ {% highlight javascript %} 
+ // do 내 블럭을 먼저 실행해 출력한 후 while 조건이 맞는지 체크
+ // 블럭을 먼저 실행하고 싶으면 do-while,  조건문이 맞을 때만 블럭을 실행하고 싶으면 while문 사용.
+do{
+    console.log(`do while: ${i}`);  // do while : 0
+    i--;
+} while (i >0);
+ {% endhighlight %}
+
+#### - for loop 
+ {% highlight javascript %} 
+    // for loop, for(begin; condition; step)
+
+    for (i=3; i >0; i --){
+        console.log(`for: ${i}`);  // for : 3   for : 2  for : 1   
+    }
+
+    for (let i = 3; i > 0; i = i -2){
+        console.log(`inline variable for : ${i}`);  // inline variable for : 3    inline variable for : 1
+    } 
+{% endhighlight %}

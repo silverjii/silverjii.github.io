@@ -1,0 +1,8 @@
+---
+layout: post
+title: "Vue 기초"
+image: 13.jpg
+categories: ['programing', 'Vue']
+---
+* 강의 내용기록
+vue 입문
