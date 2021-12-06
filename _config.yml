@@ -1,19 +1,12 @@
-title:              Clean Blog
-email:              your-email@example.com
+title:              EJ's Blog 👩🏻‍💻
+email:              silverji703@gmail.com
 description:        A Blog Theme by Start Bootstrap
 author:             Start Bootstrap
 baseurl:            ""
 url:                "silverjii.github.io"
 
 # Social Profiles
-twitter_username:   SBootstrap
-github_username:    StartBootstrap
-facebook_username:  StartBootstrap
-instagram_username:  
-linkedin_username:
-
-# Add your google-analytics ID here to activate google analytics
-google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+github_username:    silverjii
 
 # Build settings
 markdown:           kramdown

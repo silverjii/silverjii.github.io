@@ -19,4 +19,15 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/monokai-sublime.min.css"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script> 
+  <script>hljs.highlightAll();</script>
+  <style>
+
+    pre {font-size: 14px;}
+    pre code.hljs{padding: 0;}
+    .wrap_cont{margin-top: 60px;}
+
+  </style>
+
 </head>
