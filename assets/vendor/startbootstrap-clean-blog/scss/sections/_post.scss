@@ -1,5 +1,9 @@
 // Styling for the post page
+.box_card{
+    display: flex;
+}
 .post-preview {
+    width: 30%;
     >a {
         color: $gray-900;
 
