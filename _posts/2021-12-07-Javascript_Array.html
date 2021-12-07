@@ -1,0 +1,340 @@
+---
+layout: post
+title: "[JavaScript ES5+] 연산"
+date: 2021-08-05 10:45:13 -0400
+background: '/img/posts/2.jpg'
+categories : ['javascript']
+---
+
+<h2>강의 : youtube, 드림코딩 by 엘리 (자바스크립트 기초 강의 (ES5+): 같이 노트를 작성하며 배워요)</h2>
+<div class="wrap_cont">
+    <h3>Array</h3>
+    <ul>
+        <li>Declaration
+            <pre>
+                <code class="javascript">
+                    const arr1 = new Array();
+                    const arr2 = [1, 2];
+                </code>
+            </pre>
+        </li>
+        <li>Index position
+            <pre>
+                <code class="javascript">
+                    const fruits = ['🍎', '🍌'];
+                    console.log(fruits); // 0:🍎, 1:🍌, length : 2
+                    console.log(fruits[0]); // 🍎
+                    console.log(fruits[1]); // 🍌
+                    console.log(fruits[fruits.length -1]); //배열의 마지막 인덱스
+                </code>
+            </pre>
+        </li>
+        <li>Looping over an array
+            <pre>
+                <code class="javascript">
+                    //첫번째 방법
+                    for(let i = 0; i < fruits.length; i++){
+                        console.log(fruits[i]); // 🍎 🍌
+                    }
+
+                    //두번째 방법
+                    for(let fruit of fruits){
+                        console.log(fruit);  // 🍎 🍌
+                    }
+
+                    //세번째 방법
+                    fruits.forEach((fruit) => console.log(fruit)); // 🍎 🍌 
+
+                </code>
+            </pre>
+        </li>
+        <li>Addition, deletion, copy
+            <pre>
+                <code class="javascript">
+                    // push : add an item to the end
+                    fruits.push('🍓','🍑'); // 🍎,🍌,🍓,🍑
+                    
+                    //pop : remove an item from the end
+                    fruits.pop();
+                    fruits.pop();
+                    console.log(fruits); // 🍎, 🍌
+
+                    // unshift : add an item to the benigging
+                    fruits.unshift('🍓','🍋');
+                    console.log(fruits); // 🍓, 🍋, 🍎, 🍌
+
+                    // shift : remove an item from the benigging
+                    fruits.shift();
+                    console.log(fruits); // 🍋, 🍎, 🍌
+
+                    fruits.shift();
+                    console.log(fruits); // 🍎, 🍌
+
+                    // ** shift,unshift는 pop,push 보다 느리다.
+
+                    //splice : remove an item by index position
+                    fruits.push('🍓', '🍑', '🍋');
+                    console.log(fruits); // 🍎, 🍌, 🍓, 🍑, 🍋
+
+                    fruits.splice(1);
+                    console.log(fruits); // 🍎, 몇개 지울지 지정하지 않으면 지정한 인덱스부터 모든 데이터를 삭제한다ㅏ. 
+
+                    fruits.splice(1,1);
+                    console.log(fruits); // 🍎, 🍓, 🍑, 🍋
+
+                    fruits.splice(1, 1, '🍏', '🍉');
+                    console.log(fruits); // 🍎, 🍏, 🍉, 🍑, 🍋
+
+                    // combine two arrays
+                    const fruits2 = ['🍐', '🥥'];
+                    const newfruits = fruits.concat(fruits2);
+                    console.log(newfruits); // 🍎, 🍏, 🍉, 🍑, 🍋, 🍐, 🥥
+                </code>
+            </pre>
+        </li>
+        <li>Searching
+            <pre>
+                <code class="javascript">
+                    // find the index
+                    console.log(fruits); // 🍎, 🍏, 🍉, 🍑, 🍋 
+                    console.log(fruits.indexOf('🍎')); // 0
+                    console.log(fruits.indexOf('🍉')); // 2
+                    console.log(fruits.indexOf('🥥')); // -1
+
+                    console.log(fruits.includes('🍉')); // true
+                    console.log(fruits.includes('🥥')); // false
+
+                    // lastIndexOf
+                    console.log(fruits); // 🍎, 🍏, 🍉, 🍑, 🍋 
+                    fruits.push('🍎'); 
+                    console.log(fruits.indexOf('🍎')); // 0
+                    console.log(fruits.lastIndexOf('🍎')) // 5
+
+                    
+                </code>
+            </pre>
+        </li>
+        <li>
+            <pre>
+                <code class="javascript">
+                    
+                </code>
+            </pre>
+        </li>
+        <li>
+            <pre>
+                <code class="javascript">
+                    
+                </code>
+            </pre>
+        </li>
+        <li>
+            <pre>
+                <code class="javascript">
+                    
+                </code>
+            </pre>
+        </li>
+    </ul>
+
+    <h3>Operator</h3>
+    <ul>
+        <li>String concatencation
+            <pre>
+                <code class="javascript">
+                    console.log('my' + 'cat'); // my cat
+                    console.log('1' + 2); // 12
+                    console.log(`string literals : 1+2 = {1+2}`); // string literals : 1+2 = 3
+                </code>
+            </pre>
+        </li>
+        <li>Numeric operators
+            <pre>
+                <code class="javascript">
+                    console.log(1+1); // add, 2
+                    console.log(1-1); // substract, 0
+                    console.log(1/1); // divide, 1
+                    console.log(1*1); //multiply, 1
+                    console.log(5%2); //remainder, 1
+                    console.log(2**3); // exponentiation, 8(2의3승)
+                </code>
+            </pre>
+        </li>
+        <li>++, -- operators
+            <pre>
+                <code class="javascript">
+                    let counter = 2;
+                    const preIncrement = ++counter;
+                    // counter = counter +1;
+                    // preIncrement = counter;
+                    console.log(`preIncrement : ${preIncrement}, counter : ${counter}`); // preIncrement : 3, counter : 3
+
+                    const postIncrement = count++;
+                    //postIncrement = sounter;
+                    // counter = counter +1;
+                    console.log(`preIncrement : ${preIncrement}, counter : ${counter}`); // preIncrement : 3, counter : 4
+
+                    const preDecrement = --counter;
+                    console.log(`preDecrement : ${preDecrement}, counter : ${counter}`); //
+                    preDecrement : 3, counter : 3
+
+                    const postDecrement == counter--;
+                    console.log(`preDecrement : ${preDecrement}, counter : ${counter}`); //
+                    preDecrement : 3, counter : 2
+                </code>
+            </pre>
+        </li>
+        <li>= operators
+            <pre>
+                <code class="javascript">
+                    let x = 3;
+                    let y = 6;
+                    x += y; // x = x + y;
+                    x -= y;
+                    x *= y;
+                    x /=y;
+                </code>
+            </pre>
+        </li>
+        <li>Logical operators : || (or), && (and), ! (not)
+            <pre>
+                <code class="javascript">
+                    const value1 = false;
+                    const value2 = 4 &lt; 2;
+
+                    // || (or)
+                    console.log(`or : ${value1 || value2 || check()}`); // or : true
+
+                    // && (and)
+                    console.log(`and : &{value1 && value2 && check()}`); // and : false
+
+                    // 헤비한 operator는 뒤에 배치, 
+                    // or - 하나라도 true면 true
+                    // and - 모두 다 true이여야 true
+
+                    function check(){
+                        for(let i =0; i &lt; 10; i++){
+                            console.log('*');
+                        }   
+                        return true;
+                    }
+
+                    // ! (not)
+                    console.log(!value); // false
+                </code>
+            </pre>
+        </li>
+        <li>Equality
+            <pre>
+                <code class="javascript">
+                    const stringFive = '5';
+                    const numberFive = 5;
+
+                    console.log(strginFive == numberFive); // true
+                    console.log(stringFive != numberFive); // false
+
+                    console.log(stringFive === numberFive); //false
+                    console.log(stringFive !== numberFive); //true
+
+                    // object equality by reference
+                    const ellie1 = {name : 'ellie'};
+                    const ellie2 = {name : 'ellie'};
+                    const ellie3 = ellie1;
+
+                    console.log(ellie1 == ellie2); // false
+                    console.log(elli1 === ellie2); / false
+                    console.log(ellie1 === ellie3); //true
+
+                    console.log(0 == false); // true
+                    console.log(0 === false); // false
+                    console.log('' == false); // true
+                    console.log('' === false); // false
+                    console.log(null == undefined); // true
+                    console.log(null === undefined); // false
+                </code>
+            </pre>
+        </li>
+        <li>If operators
+            <pre>
+                <code class="javascript">
+                    const name = 'df';
+                    if(name == 'ellie'){
+                        console.log('Welcom, Ellie!');
+                    } else if(name === 'coder'){
+                        console.log('You ar amazing coder');
+                    }else{
+                        console.log('unkwnon') // unkwnon 출력됨.
+                    } 
+                </code>
+            </pre>
+        </li>
+        <li>? operators
+            <pre>
+                <code class="javascript">
+                    console.log(name === 'ellie' ? 'yes' : 'no'); // no
+                    // true면 yes, false면 no 출력
+                   // 간단할 때만 사용
+                </code>
+            </pre>
+        </li>
+        <li>swich
+            <pre>
+                <code class="javascript">
+                    const browser = 'IE';
+                    switch (browser){
+                        case 'IE':
+                            console.log('go away!'); // go away 출력
+                            break;
+                        
+                        case 'Chrome':
+                        case 'Firefox':   // Chrome, Firefox 일 때 실행
+                            console.log('love you!');
+                            break;
+                        default:
+                            console.log('same all!');
+                            break;
+                    }
+                </code>
+            </pre>
+        </li>
+        <li>while loop
+            <pre>
+                <code class="javascript">
+                    let i = 3;
+                    while(i>0){ //false로 나오기 전까지 무한대로 반복
+                        console.log(`while : ${i}`); 
+                        // while :3  while:2  while:1 
+                        i--;
+                    }
+                </code>
+            </pre>
+        </li>
+        <li>do-while loop
+            <pre>
+                <code class="javascript">
+                    // do 내 블럭을 먼저 실행해 출력한 후 while 조건이 맞는지 체크
+                    // 블럭을 먼저 실행하고 싶으면 do-while,  조건문이 맞을 때만 블럭을 실행하고 싶으면 while문 사용.
+                   do{
+                       console.log(`do while: ${i}`);  // do while : 0
+                       i--;
+                   } while (i >0);
+                </code>
+            </pre>
+        </li>
+        <li>for loop 
+            <pre>
+                <code class="javascript">
+                    // for loop, for(begin; condition; step)
+
+                    for (i=3; i >0; i --){
+                        console.log(`for: ${i}`);  // for : 3   for : 2  for : 1   
+                    }
+
+                    for (let i = 3; i > 0; i = i -2){
+                        console.log(`inline variable for : ${i}`);  // inline variable for : 3    inline variable for : 1
+                    } 
+                </code>
+            </pre>
+        </li>
+    </ul>
+</div>
