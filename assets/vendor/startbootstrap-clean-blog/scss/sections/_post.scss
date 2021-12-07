@@ -6,30 +6,52 @@
 }
 .post-preview {
     width: 30%;
-    margin-right: 3%;
+    overflow: hidden;
+    position: relative;
+   
+    margin: 0 1.5% 1.5% 0;
+    padding : 2%;
+    border-radius: 14px;
+    box-shadow: 3px 5px 20px 0px #80808042;
+
+
     >a {
         color: $gray-900;
 
         &:focus,
         &:hover {
             text-decoration: none;
-            color: $primary;
+            color: #0015ad;
+
+            .post-title{
+                background-size: 100% 100%;
+            }
         }
 
         >.post-title {
             font-size: 30px;
             margin-top: 30px;
             margin-bottom: 10px;
+
+            line-height: 1.2;
+            font-weight: 700;
+            background-image: linear-gradient(transparent 80%, #F8CD07 10%);
+            background-repeat: no-repeat;
+            background-size: 0 100% ;
+            transition: background-size 0.8s;
+            color: #000;
+            cursor: pointer;
         }
 
         >.post-subtitle {
+            font-size: 15px;
             font-weight: 300;
             margin: 0 0 10px;
         }
     }
 
     >.post-meta {
-        font-size: 18px;
+        font-size: 12px;
         font-style: italic;
         margin-top: 0;
         color: $gray-600;
@@ -49,7 +71,7 @@
     @media only screen and (min-width: 768px) {
         >a {
             >.post-title {
-                font-size: 36px;
+                font-size: 30px;
             }
         }
     }
