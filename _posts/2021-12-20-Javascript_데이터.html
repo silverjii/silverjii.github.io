@@ -1,0 +1,351 @@
+---
+layout: post
+title: "[JavaScript] 데이터"
+date: 2021-12-19 10:45:13 -0400
+background: '/img/posts/2.jpg'
+categories : ['javascript']
+---
+
+<h2>문자, 숫자, 배열, object, 얕은 복사, 깊은 복사, 구조 분해 할당, 데이터 불변성</h2>
+<div class="wrap_cont">
+    <h3>문자</h3>
+    <ul>
+        <li>
+            <pre>
+                <code class="javascript">
+                    const name = 'Eunji Kim'.indexOf('Kim')
+                    console.log(name)  // 6
+
+                    const lee = 'Eunji Kim'.indexOf('Lee')
+                    console.log(lee)   // -1 (반환 값이 없음)
+
+                    const name = "Eunji Kim"
+                    console.log(name.slice(6, 9))  // Kim 
+                    console.log(name.replace('Kim', 'Lee')) // Eunji Lee
+                    
+                    // 정규표현식
+                    const email = silverji@gmail.com
+                    conso.elog(s)
+                </code>
+            </pre>
+        </li>
+    </ul>
+    <h3>숫자</h3>
+    <ul>
+        <li>
+            <pre>
+                <code class="javascript">
+                    const pi = 3.141592
+                    const str = pi.toFixed(2)
+                    console.log(str)  // 3.14
+                    console.log(typeof str) // string
+
+                    const integer = parseInt(str)
+                    const float = parseFloat(str)    // 소수점 자리를 유지하면서 문자데이터를 숫자로 변환
+                    console.log(integer)  // 3
+                    console.log(float) // 3.14
+                    console.log(typeof integer, typeof float) // number number
+
+
+                    // Math 
+                    console.log('abs', Math.abs(-12))  
+                    // abs : 12 (abs - 특정한 숫자의 절대값만 반환)
+                    console.log('min', Math.min(2,8))  
+                    // min : 2 (min - 인수로 들어온 숫자 데이터 중에 작은 값을 반환)
+                    console.log('max', Math.max(2,8)) 
+                    // max : 8 (max - 인수로 들어온 숫자 데이터 중에 큰 값을 반환)
+                    console.log('ceil', Math.ceil(3.14) ) 
+                    // ceil : 4 (ceil - 정수 단위로 올림 처리를 하여 출력)
+                    console.log('floor', Math.floor(3.14) ) 
+                    // floor : 3 (floor - 내림 처리하여 출력)
+                    console.log('round', Math.round(3.14) ) 
+                    // round : 4 (round - 정수를 기준으로 반올림 처리하여 출력)
+                    console.log('random', Math.random()) 
+                    // random : 랜덤 숫자 (random - 랜덤한 숫자를 반환)
+                </code>
+            </pre>
+        </li>
+    </ul>
+    <h3>배열</h3>
+    <ul>
+        <li>
+            <pre>
+                <code class="javascript">
+                    const number = [1,2,3,4]
+                    const lastname = ['park', 'kim', 'lee']
+
+                    console.log(numbers.concat(lastname))  
+                    // (7) [1, 2, 3, 4, 'park', 'kim', 'lee'], concat은 원본 수정 되지 않는다.
+
+                    lastname.forEach(function(element. index. array){
+                        console.log(element, index, array)    
+                        // part 0 (3) ['park', 'kim', 'lee']
+                        // kim 1 (3) ['park', 'kim', 'lee']
+                        // lee 2 (3) ['park', 'kim', 'lee']
+
+                    })
+                    
+
+                    const a = lastname.map(function(name, index){
+                        return `${name}-${index}`
+                    })
+                    console.log(a)  //( 3) ['park-0', 'kim-1', 'lee-2']
+
+                    // map 화살표 함수로 변환
+                    const b = lastname.map((name,index) => ({
+                        id : index,
+                        name : name
+                    }))
+                </code>
+            </pre>
+        </li>
+        <li>
+            <pre>
+                <code class="javascript">
+                    const numbers = [1,2,3,4]
+                    const lastname = ['park', 'kim', 'lee']
+
+                    const b = numbers.filter(number => number < 3)
+                    console.log(b)   // (2) [1,2]
+
+                    const a = lastname.find(name => /^p/.test(name))
+                    console.log(a)  // park
+
+                    const c = lastname.findIndex(name => /^k/.test(name))
+                    console.log(c) // 1
+
+                    const d = numbers.inclues(3)
+                    console.log(d)  // true
+
+                    const e = lastname.includes('kim')
+                    console.log(e) // false
+
+                    // .push(), .unshift()  - 원본이 수정된다! 주의
+                    const label = [5,6,7,8]
+                    const firstname = ['paul', 'jack', 'ellen']
+
+                    label.push(5)
+                    console.log(label) // (5) [5, 6, 7, 8, 5]
+
+                    label.unshift(2)
+                    console.log(label) // (6) [2, 5, 6, 7, 8, 5]
+
+                    // .reverse() - 원본 수정된다! 주의
+                    const num = [0,1,2,3]
+                    const fruits = ['Apple', 'Banana', 'Cherry']
+
+                    num.reverse()
+                    fruits.reverse()
+
+                    console.log(num)  //(4) [3, 2, 1, 0]
+                    console.log(fruits) // (3) ['Cherry', 'Banana', 'Apple']
+
+                    // .splice() - 원본 수정된다! 주의
+
+                    const index = [1,2,3,4]
+                    const alpa = ['a', 'b', 'd']
+
+                    index.splice(2,2) 
+                    console.log(index) //(2) [1, 2]
+
+                    index.splice(2,0,99) 
+                    console.log(index) // (5) [1,2,99,3,4]
+
+                    alph.splice(2,0,'c')
+                </code>
+            </pre>
+        </li>
+    </ul>
+    <h3>object</h3>
+    <ul>
+        <li>
+            <pre>
+                <code class="javascript">
+                    // assign
+                    const neoAge = {
+                        // key : value
+                        name : 'Neo',
+                        age : 30
+                    }
+                    
+                    const neoEmail = {
+                        name : 'Neo',
+                        email : 'silverji7@gmail.com'
+                    }
+
+                    const target = Object.assign(neoAge, neoEmail)
+                    console.log(target)
+                    console.log(neoAge)
+                    console.log(target === neoAge)   // true
+
+                    const a = { k : 123}
+                    const b = { k : 123}
+                    console.log(a===b) // false
+
+                    //  keys (key들만 추출되어 새로운 배열 데이터로 나타난다.)
+                    const user = {
+                        name : 'EJ',
+                        age : 30,
+                        email : 'silverji7@gmail.com'
+                    }
+
+                    const keys = Object.keys(user)
+                    console.log(keys) // (3) ['name', 'age', 'email']
+
+                    console.log(user['email']) //silverji7@gmail.com
+
+                    const values = keys.map(key => user[key])
+                    console.log(values) // (3) ['EJ', 30, 'silverji7@gmail.com']
+                </code>
+            </pre>
+        </li>
+    </ul>
+    <h3>구조 분해 할당</h3>
+    <ul>
+        <li>
+            <pre>
+                <code class="javascript">
+                    const user = {
+                        name : 'EJ',
+                        age : 30,
+                        email : 'silverji7@gmaiil.com',
+                        address : 'USA'
+                    }
+
+                    const {name, age, email, address = 'Korea'} = user     
+                    // address 가 비어 있으면 기본값 Korea 출력
+
+                    console.log(`사용자의 이름은 ${name} 입니다.`) 
+                    // 사용자의 이름은 EJ 입니다.
+                    console.log(`${name}의 나이는 ${age}세 입니다.`) 
+                    // EJ의 나이는 30세 입니다.
+                    console.log(`${name}의 이메일 주소는 ${user.email}입니다.`) 
+                    // EJ의 이메일 주소는 silverji7@gmaiil.com입니다.
+                    console.log(address) // USA
+
+                    const name = ['park', 'kim', 'lee', 'choi']
+                    const [a,b,c,d] = name
+                    console.log(a,b,c,d)    // park kim lee choi
+
+                    const [,e] = name
+                    console.log(e) // kim
+
+                    const [,,f] = name
+                    console.log(f) // lee
+                </code>
+            </pre>
+        </li>
+    </ul>
+    <h3>전개 연산</h3>
+    <ul>
+        <li>
+            <pre>
+                <code class="javascript">
+                    const name = ['park', 'kim', 'lee']
+                    console.log(name) // (3) ['park', 'kim', 'lee']
+                    console.log(...name) // park kim lee 
+
+                    const fruits = ['Apple', 'Banana', 'Cherry', 'Orange']
+                    const toObject(a,b, ...c){
+                        return{
+                            a : a,
+                            b : b,
+                            c : c
+                        }
+                    }
+                    console.log(toObject(...fruits)) 
+                    // {a: 'Apple', b: 'Banana', c: Array(2)}
+                    
+                
+                    // 함수 축약
+                    // step 1
+                    function toObject(a,b, ...c){
+                        return{
+                            a,
+                            b,
+                            c   // 변수와 속성 이름이 같으면 하나만 적는다.
+                        }
+                    }
+
+                    // step 2
+                    const toObject = (a,b, ...c) => ({a,b,c})
+                    console.log(toObject(...fruits)) 
+                    // {a: 'Apple', b: 'Banana', c: Array(2)}
+                </code>
+            </pre>
+        </li>
+    </ul>
+    <h3>데이터 불변성</h3>
+    <ul>
+        <li>
+            <pre>
+                <code class="javascript">
+                    // 원시 데이터 : String, Number, Boolean, undefined, null  
+                    // 원시 데이터 - 데이터 자체가 변하지 않은 성질을 가지고 있음. 생긴 것이 다르면 다른 데이터 
+                    // 참조형 데이터 : Objec, Array, Function - 생긴 것이 똑같아도 같은 데이터가 아닐 수도 있다.
+
+                    let a = 1
+                    let b = 4
+                    console.log(a, b, a ===b) // 1 4 false
+
+                    b = a
+                    console.log(a, b, a === b) // 1 1 true
+
+                    a = 7
+                    console.log(a, b, a === b) // 7 1 false
+
+                    let c = 1
+                    console.log(b, c, b === c ) // 1 1 true
+                    
+                    let a = {k : 1}
+                    let b = {k : 1}
+                    console.log(a, b, a === b )  
+                    // {k:1} {k:1} false - 참조형 데이터는 새로운 값을 만들 때 마다 새로운 메모리 주소에 할당된다.
+
+                    a.k = 7
+                    b = a 
+                    console.log(a, b, a === b ) // {k:7} {k:7} true 
+
+                    a.k=2
+                    console.log(a,b, a === b) 
+                    // {k:2} {k:2} true - 위에 b=a라고 했기에 k:2, 
+                    // 같은 메모리를 바라보고 있는 여러 변수들이 있을 때 
+                    //한쪽의 변수에 있는 값을 수정하면 의도하지 않게 다른 변수들도 값이 바뀌어져 있다. 
+
+                    let c = b
+                    console.log(a, b, c, a === c ) // {k:2} {k:2} {k:2} true
+
+                    a.k = 9
+                    console.log(a, b, c, a ===  c ) // {k:9} {k:9} {k:9} true
+                </code>
+            </pre>
+        </li>
+    </ul>
+    <h3>얕은 복사, 깊은 복사</h3>
+    <ul>
+        <li>
+            <pre>
+                <code class="javascript">
+                    // 얕은 복사, 깊은 복사 (다시 공부하기🌟)
+                    const user = {
+                        name : 'eunji'
+                        age : 30
+                        emails : ['silverji7@gmail.com']
+                    }
+
+                    const copyUser = Object.assign({}, user)
+                    // 얕은복사 또다른 방법
+                    // const copyUser = {...user}
+
+                    console.log(copyUser === user ) // true
+
+                    user.age = 23
+                    console.log('user', user)
+                    console.log('copyUser', copyUser)
+                </code>
+            </pre>
+        </li>
+    </ul>
+</div>
+
+
