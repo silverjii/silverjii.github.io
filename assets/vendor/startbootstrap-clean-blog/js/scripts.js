@@ -43,4 +43,33 @@
             });
     }
 
+    var $post = $('.post-preview'),
+        $postImg = $post.find('span'),
+        $category = $postImg.attr('class');
+
+        $post.find('span').each(function(){
+            // $()
+            // $(this).append('<img src="/img/posts/'+$category'.jpg">')
+            var $className = $(this).attr('class');
+            $(this).append('<img src="/img/posts/'+$className+'.jpg">')
+
+            console.log($className)
+        })
+  
+
+        // $post.foreach(function(){
+        //     console.log('test')
+        // })
+        // $imgSrc = $('<img>',{
+        //         'src' : '/img/posts/{post.categories}.jpg',
+        //         'width' : '100%',
+        //         'height' : '100%'
+        // });
+
+
+
+        
+        // $postImg.append($imgSrc)
+
+
 })(jQuery); // End of use strict

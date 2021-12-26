@@ -12,6 +12,8 @@
 .btn-primary {
     background-color: $primary;
     border-color: $primary;
+    background-image: -webkit-linear-gradient(37deg, #39a7ff 0%, #145ea7 100%);
+    border-radius: 5px;
 
     &:hover,
     &:focus,
@@ -19,6 +21,7 @@
         color: $white;
         background-color: darken($primary, 7.5) !important;
         border-color: darken($primary, 7.5) !important;
+        background-image: -webkit-linear-gradient(240deg, #39a7ff 0%, #145ea7 100%);
     }
 }
 

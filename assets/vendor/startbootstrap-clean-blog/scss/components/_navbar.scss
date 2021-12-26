@@ -47,11 +47,11 @@
             >li.nav-item {
                 >a {
                     padding: 10px 20px;
-                    color: $white;
+                    color: #000;
 
                     &:focus,
                     &:hover {
-                        color: fade-out($white, .2);
+                        color: fade-out(#495057, .2);
                     }
                 }
             }

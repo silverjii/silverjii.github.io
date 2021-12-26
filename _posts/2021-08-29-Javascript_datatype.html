@@ -2,26 +2,26 @@
 layout: post
 title: "[JavaScript ES5+] class vs object"
 date: 2021-08-29 10:45:13 -0400
-background: '/img/posts/2.jpg'
+background: '/img/posts/javascript.jpg'
 categories : ['javascript']
 ---
 
 <h2>강의 : youtube, 드림코딩 by 엘리 (자바스크립트 3. 데이터타입, data types, le vs var, hoising)</h2>
 <div class="wrap_cont">
     <ul>
-        <li>use strict
-            <ul>
+        <li><strong>use strict</strong>
+            <ul class="txt_cont">
                 <li>ECMAScript 5 추가.</li>
                 <li>strict 모드 개발 추천.</li>
                 <li>strict 모드로 개발 할 때는 상식적인 범위안에서 자바스크립트를 이용할 수 있게 해준다. </li>
                 <li>strict 모드를 이용하면 자바스크립트 엔진이 효율적으로 더 빠르게 자바스크립트를 분석. (성능개선) </li>
             </ul>
         </li>
-        <li>Variable(변수), rw(read/write)
-            <ul><li>변경될 수 있는 값.</li></ul>
+        <li><strong>Variable(변수), rw(read/write)</strong>
+            <ul class="txt_cont"><li>변경될 수 있는 값.</li></ul>
         </li>
-        <li>let
-            <ul><li>ES6에서 추가.</li></ul>
+        <li><strong>let</strong>
+            <ul class="txt_cont"><li>ES6에서 추가.</li></ul>
             <pre>
                 <code class="javascript">
                     let name = 'ellie';
@@ -31,7 +31,7 @@ categories : ['javascript']
                 </code>
             </pre>
         </li>
-        <li>block scope
+        <li><strong>block scope</strong>
             <pre>
                 <code class="javascript">
                     let globalName = 'global name'; // global scope
@@ -47,26 +47,26 @@ categories : ['javascript']
                 </code>
             </pre>
         </li>
-        <li>global 변수
-            <ul><li>항상 메모리에 탑재. 최소한 사용이 좋다.</li></ul>
+        <li><strong>global 변수</strong>
+            <ul class="txt_cont"><li>항상 메모리에 탑재. 최소한 사용이 좋다.</li></ul>
         </li>
-        <li>var
-            <ul>
+        <li><strong>var</strong>
+            <ul class="txt_cont">
                 <li>var은 사용하지 않기.</li>
                 <li>ar은 값을 선언하기 전에 쓸 수 있다. = var hoisting</li>
                 <li>var hoisting = 어디에 선언했는지 상관없이, 항상 제일 위로 선언을 끌어 올려주는 걸 말한다.</li>
                 <li>var은 block scope가 없다.</li>
             </ul>
         </li>
-        <li>constant, r(read only)
-            <ul>
+        <li><strong>constant, r(read only)</strong>
+            <ul class="txt_cont">
                 <li>한번 할당하면 값이 절대 바뀌지 않음.</li>
                 <li>보안상</li>
                 <li>자바스크립트에서 변수값이 계속 바뀌어야 할 좋은 이우가 없다면 가능가면 const 사용이 바람직함. </li>
             </ul>
         </li>
-        <li>Variable types
-            <ul>
+        <li><strong>Variable types</strong>
+            <ul class="txt_cont">
                 <li>number</li>
                 <li>string</li>
                 <li>boolean</li>
