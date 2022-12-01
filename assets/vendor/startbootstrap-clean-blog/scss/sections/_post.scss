@@ -13,9 +13,21 @@
                     font-size: 16px;
                     line-height: 32px;
                     margin-top: 10px;
+
+                    > span{
+                        color: grey;
+                    }
+                }
+
+                > p{
+                    font-size: 16px;
                 }
             }
         }
+    }
+    >.txt_re{
+        font-size: 14px;
+        color: grey;
     }
 }
 .box_card{
@@ -139,3 +151,4 @@
         }
     }
 }
+

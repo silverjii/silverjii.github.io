@@ -12,15 +12,20 @@
 
     >ul{
         display: flex;
+        margin-bottom: 60px;
         padding-left:0px;
 
+
         >li{
-            width: 101px;
-            margin-right: 20px;
+            width: 115px;
+            margin: 0;
+            padding: 10px 5px;
             font-size:14px;
             list-style: none;
             text-align: center;
             transition:all .3s ease;
+            background: rgba(0,0,0,.04);
+            border-radius: 8px;
 
             &:first-child{
                 >a{
@@ -39,10 +44,26 @@
                 }
             }
 
+            &:nth-child(3){
+                >a{
+                    background:url('../../../img/icon_sass.png') no-repeat;
+                    background-size: 99%; 
+                    background-position: center 7px;
+                }
+            }
+            &:nth-child(4){
+                >a{
+                    background:url('../../../img/icon_typescript.png') no-repeat;
+                    background-size: 60%; 
+                    background-position: center 4px;
+                }
+            }
+
             >a{
                 display: inline-block;
                 position:relative;
-                padding-top: 60px;
+
+                padding-top: 67px;
                 color: #000;
                 text-transform:uppercase;
                 opacity: .7;
@@ -51,7 +72,7 @@
                 &:after{
                     display:block;
                     content: '';
-                    border-bottom: solid 7px #FAE100;  
+                    border-bottom: solid 7px #000;  
                     transform: scaleX(0);  
                     transition: transform 250ms ease-in-out;
 
