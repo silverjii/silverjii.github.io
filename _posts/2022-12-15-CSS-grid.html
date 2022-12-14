@@ -1,0 +1,328 @@
+---
+layout: post
+title: "[JavaScript] 데이터"
+date: 2021-12-19 10:45:13 -0400
+background: '/img/posts/sass.jpg'
+categories : ['sass']
+---
+
+<div class="wrap_cont">
+    <h1>grid</h1>
+    <p>grid는 가로세로 레이아웃 시스템</p>
+
+    <h2>display : grid</h2>
+    <h2>grid 형태</h2>
+    <dl>
+        <dt>grid-template-rows</dt>
+        <dd></dd>
+        <dt>grid-template-columns</dt>
+        <dd></dd>
+    </dl>
+    <pre>
+        <code class="html">
+            <style>
+                .container {grid-template-columns: 200px 200px 500px; grid-template-rows: 200px 200px 500px;}
+            </style>
+            <div class="container">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+            </div>
+        </code>
+    </pre>
+    <!-- <ul>
+        <li><strong>grid</strong>
+            <ul class="txt_cont">
+                <li>grid는 가로세로 레이아웃 시스템</li>
+                <li></li>
+            </ul>
+        </li>
+        <li>
+            <strong>주석 방법</strong>
+            <pre>
+                <code class="css">
+                    // SCSS   ('/* */, //'로 주석 처리 가능)
+                    .wrap {
+                        h1 {
+                            font-size : 16px;
+                            /* color : red; */
+                            // background : blue;
+                        }
+                    }
+
+                    // CSS  ( SCSS에서 '//'로 주석처리한 소스는 CSS 변환 시 소스가 나타나지 않는다.)
+                    .wrap h1{
+                        font-size : 16px;
+                        /* color : red; */
+                    }
+                </code>
+            </pre>
+        </li>
+        <li>
+            <strong>상위 선택자 참조</strong>
+            <pre>
+                <code class="css">
+                    // 1. SCSS
+                    .btn {
+                        position : relative;
+                        &.on{
+                            color : yellow;
+                        }
+                    }
+                    // 1. CSS
+                    .btn {position:relative;}
+                    .btn.on{color:yellow;}
+
+                    // 2. SCSS
+                    .lst_con{
+                        li{
+                            &:first-child{
+                                padding-left: 30px;
+                            }
+                        }
+                    }
+                    // 2. CSS
+                    .lst_con li:first-child{padding-left:30px;}
+
+                    // 3. SCSS
+                    .font{
+                        &-ft18{font-size:18px;}
+                        &-ft12{font-size:12px;}
+                        &-ft10{font-size:10px;}
+                    }
+                    // 3. CSS
+                    .font-ft18{font-size:18px;}
+                    .font-ft12{font-size:12px;}
+                    .font-ft10{font-size:10px;}
+                </code>
+            </pre>
+        </li>
+        <li><strong>중첩</strong>
+            <pre>
+                <code class="html">
+                    <div class="wrap">
+                        <ul>
+                            <li>
+                                <span class="name">이름</span>
+                            </li>
+                            <li>
+                                <span class="city">서울</span>
+                            </li>
+                        </ul>
+                    </div>
+                </code>
+                <code class="css">
+                    // SCSS
+                    .wrap{
+                        ul{
+                            li{
+                                font-size : 12px;
+                                .name{
+                                    font-weight:bold;
+                                }
+                                .city{
+                                    color : red;
+                                }
+                            }
+                        }
+                    }
+
+                    // CSS
+                    .wrap ul li {
+                        font-size: 12px;
+                      }
+                      .wrap ul li .name {
+                        font-weight: bold;
+                      }
+                      .wrap ul li .city {
+                        color: red;
+                      }
+                </code>
+            </pre>
+        </li>
+        <li><strong>중첩된 속성</strong>
+            <pre>
+                <code class="css">
+                    // SCSS
+                    .area{
+                        margin : {
+                            top : 10px;
+                            left : 20px
+                        };
+                        padding : {
+                            top : 10px;
+                            right : 30px;
+                            bottom : 20px;
+                            left : 40px;
+                        };
+                        font : {
+                            weight : bold;
+                            size : 10px;
+                        };
+                    }
+
+                    // CSS
+                    .area {
+                        margin-top: 10px;
+                        margin-left: 20px;
+                        padding-top: 10px;
+                        padding-right: 30px;
+                        padding-bottom: 20px;
+                        padding-left: 40px;
+                        font-weight: bold;
+                        font-size: 10px;
+                    }
+                </code>
+            </pre>
+        </li>
+        <li><strong>변수</strong>
+            <pre>
+                <code class="css">
+                    //변수 적용 전 SCSS
+                    .wrap{
+                        position : relative;
+                        top : 100px;
+                        .con{
+                            width : 100px;
+                            height : 100px;
+                        }
+                    }
+
+                    //변수 적용 후 SCSS
+                    $size : 100px;   // 전역변수
+                    .wrap{
+                        position : relative;
+                        top : $size;
+                        .con{
+                            width : $size;
+                            height : $size;
+                        }
+                    }
+
+                    // CSS
+                    .wrap {
+                        position: relative;
+                        top: 100px;
+                    }
+                    .wrap .con {
+                        width: 100px;
+                        height: 100px;
+                    }
+                </code>
+            </pre>
+            <pre>
+                <code class="css">
+                    // SCSS의 변수는 재할당이 가능하다.
+                    // SCSS  
+                    .wrap{
+                        $size : 100px; 
+                        position : relative;
+                        top : $size;
+                        .con{
+                            $size : 200px; 
+                            width : $size;
+                            height : $size;
+                        }
+                        right : $size;    //재할당 된 값으로 변수값이 지정된다.
+                    }
+
+                    // CSS
+                    .wrap {
+                        position: relative;
+                        top: 100px;
+                        left : 200px;
+                    }
+                    .wrap .con {
+                        width: 200px;
+                        height: 200px;
+                    }
+
+                </code>
+            </pre>
+        </li>
+        <li><strong>재활용</strong>
+            <pre>
+                <code class="css">
+                    // HTML
+                    <div class="wrap">
+                        <div class="con">
+                            재활용1
+                        </div>
+                    </div>
+
+                    // SCSS
+                    @mixin middle{
+                        display : flex;
+                        justify-content : center;
+                        align-items : center;
+                    }
+
+                    .wrap{
+                        @include middle;
+                        .con{
+                            @include middle;
+                        }
+                    }
+
+                    // CSS
+                    .wrap {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .wrap .con {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                </code>
+            </pre>
+            <pre>
+                <code class="css">
+                    // HTML
+                    <div class="wrap">
+                        <div class="con">
+                            재활용2
+                        </div>
+                    </div>
+
+                    // SCSS
+                    @mixin size($value : 50px, $bg : red){  //$value 기본 값 50px, $bg 기본값 red
+                        width : $value;
+                        height : $value;
+                        background-color : $bg;
+                    }
+
+                    .wrap{
+                        @include size(100px, green);
+                        .con{
+                            @include size; // value, bg 값 순서대로 적는 대신 키워드 인수로 사용 할 수 있다. value 없을 시 size($bg: blue) 로 사용하면 된다.
+                        } 
+                    }
+
+                    // CSS
+                    .wrap {
+                        width: 100px;
+                        height: 100px;
+                        background-color: green;
+                    }
+                    .wrap .con {
+                        width: 50px;
+                        height: 50px;
+                        background-color: red;
+                    }
+
+                </code>
+            </pre>
+        </li>
+    </ul> -->
+    <p class="txt_re">참고 :  https://heropy.blog/2018/01/31/sass/, https://nykim.work/97</p>
+</div>
+
+
