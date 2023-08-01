@@ -24,9 +24,8 @@
             list-style: none;
             text-align: center;
             transition:all .3s ease;
-            background: rgba(0,0,0,.04);
-            border-radius: 8px;
-
+            background: #fff;
+            
             &:first-child{
                 >a{
                     background:url('../../../img/icon_js.png') no-repeat;

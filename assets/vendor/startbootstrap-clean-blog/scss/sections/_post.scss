@@ -41,14 +41,16 @@
     }
 }
 .post-preview {
-    width: 29%;
+    width: 20rem;
     overflow: hidden;
     position: relative; 
-    margin: 0 6.4% 4% 0;
-    border-radius: 14px;
+    margin: 1rem;
+    border-radius: 4px;
     top: 0;
-    box-shadow: 3px 5px 20px 0px #80808042;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px 0px;
     transition: all ease .2s 0s;
+    display: flex;
+    flex-direction : column;
 
     &:nth-child(3n){
         margin-right: 0;
